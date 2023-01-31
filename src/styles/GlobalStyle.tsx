@@ -1,4 +1,7 @@
+// vendors
 import { createGlobalStyle } from 'styled-components'
+
+// styles
 import { resetCSS } from './reset-css'
 
 const GlobalStyle = createGlobalStyle`
@@ -7,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     font-family: 'Montserrat', sans-serif;
-    line-height: 19px;
+    background: #E5E5E5;
   }
 
   a {
@@ -17,6 +20,13 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+  }
+
+  button {
+    font-family: inherit;
+    border: none;
+    outline: none;
+    background: none;
   }
 `
 
