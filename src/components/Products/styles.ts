@@ -11,7 +11,7 @@ export const Container = styled.div`
   @media (min-width: 825px) {
     grid-template-columns: repeat(2, 1fr);
     max-width: 940px;
-    margin: 7.5rem auto 0;
+    margin: 7.5rem auto 10.75rem;
     padding: 0;
   }
 
