@@ -1,4 +1,4 @@
-# João Store
+# MKS Sistemas prototype
 
 Protótipo website de uma loja online, MKS Sistemas.
 
