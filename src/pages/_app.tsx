@@ -1,23 +1,31 @@
+// vendors
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
+
+// components
+import Footer from '@/components/Footer/Footer'
+
 // types
 import type { AppProps } from 'next/app'
 
-// components
-import { Footer } from '@/components/Footer/Footer'
-import Header from '@/components/Header/Header'
+// stores
+import { persistor, store } from '@/store'
 
 // styles
 import GlobalStyle from '@/styles/GlobalStyle'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Header />
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <div>
+          <GlobalStyle />
 
-      <GlobalStyle />
+          <Component {...pageProps} />
 
-      <Component {...pageProps} />
-
-      <Footer />
-    </>
+          <Footer />
+        </div>
+      </PersistGate>
+    </Provider>
   )
 }

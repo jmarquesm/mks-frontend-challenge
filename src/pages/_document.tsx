@@ -1,9 +1,9 @@
-// types
-import type { DocumentContext } from 'next/document'
-
 // vendors
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+
+// types
+import type { DocumentContext } from 'next/document'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
