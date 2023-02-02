@@ -8,3 +8,5 @@ export interface Product {
   createdAt: string
   updatedAt: string
 }
+
+export type CartItem = Product & { amount: number }
