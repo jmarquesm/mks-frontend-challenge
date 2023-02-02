@@ -1,8 +1,9 @@
+// components
+import Header from '@/components/Header/Header'
+import { Products } from '@/components/Products/Products'
+
 // types
 import type { Product } from '@/typings/product'
-
-// components
-import { Products } from '@/components/Products/Products'
 
 // styles
 import * as S from '../styles/home-page'
@@ -13,9 +14,12 @@ interface Props {
 
 export default function Home({ products }: Props) {
   return (
-    <S.Container>
-      <Products products={products} />
-    </S.Container>
+    <>
+      <Header />
+      <S.Container>
+        <Products products={products} />
+      </S.Container>
+    </>
   )
 }
 
