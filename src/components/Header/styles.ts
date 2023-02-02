@@ -9,9 +9,16 @@ export const Container = styled.div`
 
 export const Nav = styled.nav`
   width: 1440px;
+  max-height: 48px;
   display: flex;
   justify-content: space-between;
-  padding: 1.75rem;
+  align-items: center;
+  padding: 0.75rem 1.375rem;
+
+  @media (min-width: 768px) {
+    padding: 1.75rem;
+    max-height: none;
+  }
 `
 
 export const Logo = styled.div`
@@ -22,35 +29,67 @@ export const Logo = styled.div`
 export const MksLogo = styled.div`
   color: white;
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: 32px;
+
+  @media (min-width: 768px) {
+    font-size: 40px;
+  }
 `
 
 export const SistemasLogo = styled.div`
   color: white;
   font-weight: 300;
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-left: 0.5rem;
   align-self: center;
   padding-top: 0.25rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
 `
 
 export const Cart = styled.button`
   display: flex;
   background: white;
-  height: 2.75rem;
   border-radius: 0.5rem;
-  width: 5.625rem;
+  height: 1.625rem;
+  width: 3.25rem;
   align-items: center;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    height: 2.75rem;
+    width: 5.625rem;
+    cursor: pointer;
+  }
 `
 
 export const Icon = styled.div`
-  margin: 0.75rem 0 0.75rem 0.75rem;
   display: flex;
+  margin: 0.5rem 0 0.5rem 0.5rem;
+
+  svg {
+    height: 11px;
+  }
+
+  @media (min-width: 768px) {
+    margin: 1rem 0.25rem 1rem 1rem;
+    svg {
+      height: 18px;
+    }
+  }
 `
 
 export const CartCount = styled.div`
   font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
-  margin: 0.75rem 1.75rem 0.75rem 0.75rem;
+  font-size: 12px;
+  line-height: 15px;
+  margin: 0.5rem 0.875rem 0.5rem 0.25rem;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0.75rem 1.75rem 0.75rem 0.75rem;
+  }
 `
