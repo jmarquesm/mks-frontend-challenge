@@ -1,8 +1,8 @@
-// types
-import type { Product } from '@/typings/product'
-
 // components
 import { Card } from './Card/Card'
+
+// types
+import type { Product } from '@/typings/product'
 
 // styles
 import * as S from './styles'

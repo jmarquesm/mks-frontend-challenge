@@ -1,8 +1,14 @@
+// vendors
+import { useDispatch } from 'react-redux'
+
+// componentes
+import { ShoppingBag } from '@/components/icons/ShoppingBag/ShoppingBag'
+
+// stores
+import { addToCart } from '@/store/cartSlice'
+
 // types
 import type { Product } from '@/typings/product'
-
-// icons
-import { ShoppingBag } from '@/components/icons/ShoppingBag/ShoppingBag'
 
 // styles
 import * as S from './styles'
@@ -12,6 +18,8 @@ interface Props {
 }
 
 export function Card({ product }: Props) {
+  const dispatch = useDispatch()
+
   return (
     <S.Card key={product.name}>
       <S.ImageContainer>
@@ -32,7 +40,7 @@ export function Card({ product }: Props) {
         <S.Description>{product.description}</S.Description>
       </S.Info>
 
-      <S.Button>
+      <S.Button onClick={() => dispatch(addToCart(product))}>
         <ShoppingBag /> COMPRAR
       </S.Button>
     </S.Card>
