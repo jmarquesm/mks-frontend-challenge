@@ -1,7 +1,7 @@
 // styles
 import * as S from './styles'
 
-export function Footer() {
+export default function Footer() {
   return (
     <S.Container>
       <S.CompanyRights>MKS sistemas © Todos os direitos reservados</S.CompanyRights>
