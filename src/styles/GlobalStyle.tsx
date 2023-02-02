@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
     background: #f9f9f9;
   }
 
+  body.disable-scroll {
+    overflow: hidden;
+  }
+
   a {
     color: inherit;
     text-decoration: none;
