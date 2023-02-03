@@ -43,3 +43,7 @@ Com o acesso, a página recarrega automáticamente caso efetue uma edição no c
 ### `yarn build`
 
 Prepara o projeto para ser implantado em produção.
+
+### `yarn test`
+
+Roda os testes do projeto.
