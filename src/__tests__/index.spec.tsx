@@ -55,6 +55,18 @@ describe('Home', () => {
     expect(screen.getByText('Headset Cloud Revolver')).toBeInTheDocument()
   })
 
+  it('should open and close cart drawer', () => {
+    render(withStoreProvider(<Home products={products} />))
+
+    const cartBag = screen.getByTestId('cart-bag')
+
+    expect(screen.queryByTestId('cart-drawer')).not.toBeInTheDocument()
+    fireEvent.click(cartBag)
+    expect(screen.queryByTestId('cart-drawer')).toBeInTheDocument()
+    fireEvent.click(cartBag)
+    expect(screen.queryByTestId('cart-drawer')).not.toBeInTheDocument()
+  })
+
   it('should add product to cart', () => {
     render(withStoreProvider(<Home products={products} />))
 
@@ -66,5 +78,8 @@ describe('Home', () => {
     expect(cartItems).toHaveTextContent('1')
     fireEvent.click(buyButtons[1])
     expect(cartItems).toHaveTextContent('2')
+    fireEvent.click(buyButtons[1])
+    fireEvent.click(buyButtons[1])
+    expect(cartItems).toHaveTextContent('4')
   })
 })

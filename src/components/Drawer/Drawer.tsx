@@ -24,7 +24,7 @@ export default function Drawer({ open, handleDrawer }: Props) {
   }, [items])
 
   return (
-    <S.Container open={open}>
+    <S.Container open={open} data-testid="cart-drawer">
       <S.TitleContainer>
         <S.Title>
           Carrinho

@@ -17,10 +17,14 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const totalItems = items.reduce((acc, item) => acc + item.amount, 0)
 
-  function handleDrawer() {
-    !isOpen
-      ? (setIsOpen(true), document.body.classList.add('disable-scroll'))
-      : (setIsOpen(false), document.body.classList.remove('disable-scroll'))
+  function toggleDrawer() {
+    if (!isOpen) {
+      setIsOpen(true)
+      document.body.classList.add('disable-scroll')
+    } else {
+      setIsOpen(false)
+      document.body.classList.remove('disable-scroll')
+    }
   }
 
   return (
@@ -32,7 +36,7 @@ export default function Header() {
             <S.SistemasLogo>Sistemas</S.SistemasLogo>
           </S.Logo>
 
-          <S.Cart onClick={handleDrawer}>
+          <S.Cart onClick={toggleDrawer} data-testid="cart-bag">
             <S.Icon>
               <CartIcon />
             </S.Icon>
@@ -42,7 +46,7 @@ export default function Header() {
         </S.Nav>
       </S.Container>
 
-      {isOpen && <Drawer handleDrawer={handleDrawer} open={isOpen} />}
+      {isOpen && <Drawer handleDrawer={toggleDrawer} open={isOpen} />}
     </>
   )
 }
