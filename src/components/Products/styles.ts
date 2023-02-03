@@ -12,7 +12,7 @@ export const Container = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem 1.5rem;
     max-width: 940px;
-    margin: 7.5rem auto 10.75rem;
+    margin: auto;
     padding: 0;
   }
 

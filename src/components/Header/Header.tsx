@@ -14,7 +14,7 @@ import * as S from './styles'
 
 export default function Header() {
   const items = useSelector((state: RootState) => state.cart.items)
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState(false)
   const totalItems = items.reduce((acc, item) => acc + item.amount, 0)
 
   function toggleDrawer() {
@@ -46,7 +46,7 @@ export default function Header() {
         </S.Nav>
       </S.Container>
 
-      {isOpen && <Drawer handleDrawer={toggleDrawer} open={isOpen} />}
+      {isOpen && <Drawer toggleDrawer={toggleDrawer} open={isOpen} />}
     </>
   )
 }

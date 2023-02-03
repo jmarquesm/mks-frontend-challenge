@@ -15,14 +15,13 @@ export const Container = styled.div<DivProps>`
   top: 0;
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
   position: fixed;
+  transform: translateX(-100%);
+  transform: ${({ open }) => open && 'translateX(0%)'};
+  animation: ${({ open }) => (open ? openMobile : open === false ? closeMobile : null)} 300ms normal forwards
+    ease-in-out;
 
   @media (min-width: 768px) {
     width: 486px;
-
-    transform: translateX(-100%);
-    transform: ${({ open }) => open && 'translateX(0%)'};
-    animation: ${({ open }) => (open === true ? openMobile : open === false ? closeMobile : null)} 300ms
-      normal forwards ease-in-out;
   }
 `
 

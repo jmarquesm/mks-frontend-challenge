@@ -1,5 +1,5 @@
 // vendors
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 // components
@@ -12,26 +12,35 @@ import type { RootState } from '@/store'
 import * as S from './styles'
 
 interface Props {
-  handleDrawer: () => void
+  toggleDrawer: () => void
   open: boolean | null
 }
 
-export default function Drawer({ open, handleDrawer }: Props) {
+export default function Drawer({ open, toggleDrawer }: Props) {
   const items = useSelector((state: RootState) => state.cart.items)
+  const [isDrawerOpen, setIsDrawerOpen] = useState(open)
 
   const totalPrice = useMemo(() => {
     return Object.values(items).reduce((acc, item) => acc + +item.price * item.amount, 0)
   }, [items])
 
+  function handleToggleDrawer() {
+    setIsDrawerOpen(!isDrawerOpen)
+
+    if (isDrawerOpen) {
+      setTimeout(() => toggleDrawer(), 500)
+    }
+  }
+
   return (
-    <S.Container open={open} data-testid="cart-drawer">
+    <S.Container open={isDrawerOpen} data-testid="cart-drawer">
       <S.TitleContainer>
         <S.Title>
           Carrinho
           <br /> de compras
         </S.Title>
 
-        <S.Button onClick={handleDrawer}>X</S.Button>
+        <S.Button onClick={handleToggleDrawer}>X</S.Button>
       </S.TitleContainer>
 
       <S.ProductContainer>
